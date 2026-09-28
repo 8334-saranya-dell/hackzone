@@ -1,0 +1,6 @@
+{
+  "name": "HackZone – Student Hackathon Finder",
+  "description": "Discover student hackathons by zone, state, city, technology, date, and eligibility across India and online.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
