@@ -10,7 +10,8 @@ import {
   X, 
   ShieldCheck, 
   LogOut,
-  ChevronDown
+  ChevronDown,
+  Bot
 } from 'lucide-react';
 import { UserRole } from '../types';
 
@@ -141,6 +142,16 @@ export const Navbar: React.FC = () => {
               )}
             </button>
           )}
+
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent('open-hackzone-chat'))}
+            className="ml-1 px-3 py-1.5 rounded-lg border border-cyan-500/30 bg-cyan-950/30 text-cyan-300 hover:bg-cyan-900/40 hover:text-white transition-all flex items-center gap-1.5 text-xs font-semibold shadow-sm"
+            title="Chat with n8n AI Agent"
+          >
+            <Bot className="h-3.5 w-3.5 text-cyan-400" />
+            <span>AI Chat</span>
+            <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          </button>
         </nav>
 
         {/* Zone 3: Primary Actions & User Status */}
@@ -286,6 +297,18 @@ export const Navbar: React.FC = () => {
           </div>
 
           <div className="pt-2 border-t border-slate-800/80 flex flex-col gap-2">
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                window.dispatchEvent(new CustomEvent('open-hackzone-chat'));
+              }}
+              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg border border-cyan-500/40 bg-gradient-to-r from-cyan-950/60 to-blue-950/60 text-sm font-semibold text-cyan-300 shadow-sm"
+            >
+              <Bot className="h-4 w-4 text-cyan-400" />
+              <span>AI Assistant (n8n)</span>
+              <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            </button>
+
             <button
               onClick={() => handleNav('add-hackathon')}
               className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg border border-cyan-500/30 bg-cyan-500/10 text-sm font-semibold text-cyan-300"

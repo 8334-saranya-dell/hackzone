@@ -12,6 +12,7 @@ import { HackathonDetails } from './components/HackathonDetails';
 import { StudentDashboard } from './components/StudentDashboard';
 import { AdminDashboard } from './components/AdminDashboard';
 import { LoginView, RegisterView } from './components/AuthModals';
+import { Chatbot } from './components/Chatbot';
 
 const MainContent: React.FC = () => {
   const { currentRoute } = useApp();
@@ -50,6 +51,7 @@ const MainContent: React.FC = () => {
         {renderRoute()}
       </main>
       <Footer />
+      <Chatbot />
       <ToastContainer />
     </div>
   );
